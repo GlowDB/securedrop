@@ -170,3 +170,22 @@
     <description>Ansible playbook run on server (securedrop-admin install, backup, or restore).</description>
   </rule>
 </group>
+
+<!--
+  Suppress OSSEC server started message to reduce administrator noise as
+  this alert is sent to admins daily (after reboot).
+-->
+<group name="OSSEC server started">
+  <rule id="502" level="3" overwrite="yes">
+    <options>no_email_alert</options>
+  </rule>
+</group>
+
+<!--
+  Suppress OSSEC agent started message to reduce administrator noise as
+  this alert is sent to admins daily (after reboot).-->
+<group name="OSSEC agent started">
+  <rule id="503" level="3" overwrite="yes">
+    <options>no_email_alert</options>
+  </rule>
+</group>
